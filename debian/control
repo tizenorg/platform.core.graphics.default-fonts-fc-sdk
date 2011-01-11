@@ -1,0 +1,15 @@
+Source: default-fonts-fc-sdk
+Section: misc
+Priority: extra
+Maintainer: MyoungWoon Roy Kim <myoungwoon.kim@samsung.com>
+Uploaders: 
+Build-Depends: debhelper (>= 5)
+Standards-Version: 3.7.2
+Homepage: N/A
+
+Package: default-fonts-fc-sdk
+Section: misc
+Architecture: any
+Depends: default-fonts-sdk
+Description: Font configuration package for fontconfig
+ This package is maintained by SDK team

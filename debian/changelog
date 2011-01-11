@@ -1,0 +1,7 @@
+default-fonts-fc-sdk (0.0.1-1) unstable; urgency=low
+
+  * Initial release
+  * Git: 165.213.180.234:slp/sdk/default-fonts-fc-sdk
+  * Tag: default-fonts-fc-sdk_0.0.1-1
+
+ -- MyoungWoon Roy Kim <myoungwoon.kim@samsung.com>  Tue, 11 Jan 2011 20:22:57 +0900
