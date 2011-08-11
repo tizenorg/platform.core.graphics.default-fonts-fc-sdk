@@ -2,7 +2,7 @@ Source: default-fonts-fc-sdk
 Section: misc
 Priority: extra
 Maintainer: MyoungWoon Roy Kim <myoungwoon.kim@samsung.com>
-Uploaders: 
+Uploaders: Minsu Han <minsu81.han@samsung.com>
 Build-Depends: debhelper (>= 5)
 Standards-Version: 3.7.2
 Homepage: N/A
