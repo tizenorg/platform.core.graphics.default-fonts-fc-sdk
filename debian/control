@@ -10,6 +10,5 @@ Homepage: N/A
 Package: default-fonts-fc-sdk
 Section: misc
 Architecture: any
-Depends: default-fonts-sdk
 Description: Font configuration package for fontconfig
  This package is maintained by SDK team
