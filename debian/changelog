@@ -1,0 +1,7 @@
+default-fonts-fc-sdk (0.0.2-3) unstable; urgency=low
+
+  * Initial Version
+  * Git: pkgs/d/default-fonts-fc-sdk
+  * Tag: default-fonts-fc-sdk_0.0.2-3
+
+ -- Minsu Han <minsu81.han@samsung.com>  Tue, 06 Dec 2011 18:13:06 +0900
