@@ -26,7 +26,7 @@ ln -s ../conf.avail/99-slp.conf %{buildroot}%{_prefix}/etc/fonts/conf.d/99-slp.c
 
 
 %files
-%defattr(-,root,root,-)
+%defattr(-,root,root,-) 
 %{_prefix}/etc/fonts/conf.avail/99-slp.conf
 %{_prefix}/etc/fonts/conf.d/99-slp.conf
 %exclude %{_prefix}/etc/fonts/conf.d/documentation.list
