@@ -5,6 +5,7 @@ Release:    0
 Group:      TO_BE/FILLED_IN
 License:    Samsung Proprietary License 
 Source0:    %{name}-%{version}.tar.gz
+Source1001: packaging/default-fonts-fc-sdk.manifest 
 
 %description
 Font configuration package for SDK
@@ -14,6 +15,7 @@ This package is maintained by SDK team
 %setup -q
 
 %build
+cp %{SOURCE1001} .
 
 %install
 rm -rf %{buildroot}
@@ -24,6 +26,7 @@ cd %{buildroot}%{_prefix}/etc/fonts/conf.d/
 ln -s ../conf.avail/99-slp.conf %{buildroot}%{_prefix}/etc/fonts/conf.d/99-slp.conf
 
 %files
+%manifest default-fonts-fc-sdk.manifest
 %defattr(-,root,root,-) 
 %{_prefix}/etc/fonts/conf.avail/99-slp.conf
 %{_prefix}/etc/fonts/conf.d/99-slp.conf
