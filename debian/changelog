@@ -1,7 +1,39 @@
 default-fonts-fc-sdk (0.0.2-3) unstable; urgency=low
 
-  * Initial Version
-  * Git: pkgs/d/default-fonts-fc-sdk
+  * Modify Maintainer 
+  * Git: 165.213.180.234:slp/sdk/default-fonts-fc-sdk
   * Tag: default-fonts-fc-sdk_0.0.2-3
 
  -- Minsu Han <minsu81.han@samsung.com>  Tue, 06 Dec 2011 18:13:06 +0900
+
+default-fonts-fc-sdk (0.0.2-2) unstable; urgency=low
+
+  * Remove default-fonts-sdk dependency 
+  * Git: 165.213.180.234:slp/sdk/default-fonts-fc-sdk
+  * Tag: default-fonts-fc-sdk_0.0.2-2
+
+ -- Minsu Han <minsu81.han@samsung.com>  Mon, 29 Aug 2011 10:00:03 +0900
+
+default-fonts-fc-sdk (0.0.2-1) unstable; urgency=low
+
+  * Version up for dupload 
+  * Git: 165.213.180.234:slp/sdk/default-fonts-fc-sdk
+  * Tag: default-fonts-fc-sdk_0.0.2-1
+
+ -- Minsu Han <minsu81.han@samsung.com>  Thu, 11 Aug 2011 17:56:21 +0900
+
+default-fonts-fc-sdk (0.0.1-2) unstable; urgency=low
+
+  * Rename default-fonts-fc-slp to default-fonts-fc-sdk
+  * Git: 165.213.180.234:slp/sdk/default-fonts-fc-sdk
+  * Tag: default-fonts-fc-sdk_0.0.1-2
+
+ -- Minsu Han <minsu81.han@samsung.com>  Thu, 11 Aug 2011 15:11:47 +0900
+
+default-fonts-fc-sdk (0.0.1-1) unstable; urgency=low
+
+  * Initial release
+  * Git: 165.213.180.234:slp/sdk/default-fonts-fc-sdk
+  * Tag: default-fonts-fc-sdk_0.0.1-1
+
+ -- MyoungWoon Roy Kim <myoungwoon.kim@samsung.com>  Tue, 11 Jan 2011 20:22:57 +0900
