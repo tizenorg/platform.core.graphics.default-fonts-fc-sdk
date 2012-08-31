@@ -2,7 +2,7 @@
 Name:       default-fonts-fc-sdk
 Summary:    Font configuration package for SDK
 Version:    0.0.2
-Release:    5
+Release:    6
 Group:      TO_BE/FILLED_IN
 License:    TO BE FILLED IN
 Source0:    %{name}-%{version}.tar.gz
