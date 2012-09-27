@@ -2,10 +2,11 @@
 Name:       default-fonts-fc-sdk
 Summary:    Font configuration package for SDK
 Version:    0.0.2
-Release:    4
+Release:    5
 Group:      TO_BE/FILLED_IN
 License:    TO BE FILLED IN
 Source0:    %{name}-%{version}.tar.gz
+Source1001: packaging/default-fonts-fc-sdk.manifest
 
 %description
 Font configuration package for SDK
@@ -15,6 +16,7 @@ This package is maintained by SDK team
 %setup -q
 
 %build
+cp %{SOURCE1001} .
 
 %install
 rm -rf %{buildroot}
@@ -29,6 +31,7 @@ chown :5000 /opt/etc/fonts/conf.avail/99-slp.conf
 chmod 664 /opt/etc/fonts/conf.avail/99-slp.conf
 
 %files
+%manifest default-fonts-fc-sdk.manifest
 %defattr(-,root,root,-)
 /opt/etc/fonts/conf.avail/99-slp.conf
 %{_prefix}/etc/fonts/conf.d/99-slp.conf
