@@ -6,7 +6,7 @@ Release:    1
 Group:      TO_BE/FILLED_IN
 License:    TO BE FILLED IN
 Source0:    %{name}-%{version}.tar.gz
-Source1001: packaging/default-fonts-fc-sdk.manifest
+Source1001: default-fonts-fc-sdk.manifest
 
 %description
 Font configuration package for SDK
@@ -31,7 +31,7 @@ chown :5000 /opt/etc/fonts/conf.avail/99-slp.conf
 chmod 664 /opt/etc/fonts/conf.avail/99-slp.conf
 
 %files
-%manifest default-fonts-fc-sdk.manifest
+%manifest %{name}.manifest
 %defattr(-,root,root,-)
 /opt/etc/fonts/conf.avail/99-slp.conf
 %{_prefix}/etc/fonts/conf.d/99-slp.conf
