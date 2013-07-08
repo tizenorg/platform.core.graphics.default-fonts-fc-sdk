@@ -1,0 +1,8 @@
+Change-Id: I1d1be0df95b1ff677eb95d87100ccd75023fbb91
+Code-Review+2: Ryan Ware <ware@linux.intel.com>
+Verified+1: Ryan Ware <ware@linux.intel.com>
+Submitted-by: Ryan Ware <ware@linux.intel.com>
+Submitted-at: Mon, 08 Jul 2013 10:08:20 -0700
+Reviewed-on: https://review.tizen.org/gerrit/4409
+Project: platform/core/graphics/default-fonts-fc-sdk
+Branch: refs/heads/tizen
