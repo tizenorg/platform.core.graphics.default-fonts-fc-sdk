@@ -3,10 +3,12 @@ Name:       default-fonts-fc-sdk
 Summary:    Font configuration package for SDK
 Version:    0.0.2
 Release:    1
-Group:      TO_BE/FILLED_IN
-License:    TO BE FILLED IN
+Group:      SDK/Configuration
+License:    Apache-2.0
 Source0:    %{name}-%{version}.tar.gz
 Source1001: default-fonts-fc-sdk.manifest
+BuildArch:  noarch
+BuildRequires: pkgconfig(libtzplatform-config)
 
 %description
 Font configuration package for SDK
@@ -22,17 +24,18 @@ cp %{SOURCE1001} .
 rm -rf %{buildroot}
 
 mkdir -p %{buildroot}%{_prefix}/etc/fonts/conf.d/
-mkdir -p %{buildroot}/opt/etc/fonts/conf.avail/ && cp -a sdk_fonts_fc/* %{buildroot}/opt/etc/fonts/conf.avail/
+mkdir -p %{buildroot}%{TZ_SYS_ETC}/fonts/conf.avail/ && cp -a sdk_fonts_fc/* %{buildroot}%{TZ_SYS_ETC}/fonts/conf.avail/
 cd %{buildroot}%{_prefix}/etc/fonts/conf.d/
-ln -s ../../../../opt/etc/fonts/conf.avail/99-slp.conf %{buildroot}%{_prefix}/etc/fonts/conf.d/99-slp.conf
+ln -s ../../../..%{TZ_SYS_ETC}/fonts/conf.avail/99-slp.conf %{buildroot}%{_prefix}/etc/fonts/conf.d/99-slp.conf
 
 %post
-chown :5000 /opt/etc/fonts/conf.avail/99-slp.conf
-chmod 664 /opt/etc/fonts/conf.avail/99-slp.conf
+TZ_SYS_USER_GROUP_ID=$(getent group %{TZ_SYS_USER_GROUP} | cut -d: -f3)
+chown :$TZ_SYS_USER_GROUP_ID %{TZ_SYS_ETC}/fonts/conf.avail/99-slp.conf
+chmod 664 %{TZ_SYS_ETC}/fonts/conf.avail/99-slp.conf
 
 %files
 %manifest %{name}.manifest
 %defattr(-,root,root,-)
-/opt/etc/fonts/conf.avail/99-slp.conf
+%{TZ_SYS_ETC}/fonts/conf.avail/99-slp.conf
 %{_prefix}/etc/fonts/conf.d/99-slp.conf
 %exclude %{_prefix}/etc/fonts/conf.d/documentation.list
