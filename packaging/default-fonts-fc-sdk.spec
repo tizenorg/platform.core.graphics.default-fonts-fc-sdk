@@ -1,7 +1,7 @@
 #sbs-git:slp/sdk/default-fonts-fc-sdk default-fonts-fc-sdk 0.0.2 8414dbd3e62b6f7a864ba031e043dd7604b3d86d
 Name:       default-fonts-fc-sdk
 Summary:    Font configuration package for SDK
-Version:    0.0.3
+Version:    0.0.4
 Release:    1
 Group:      TO_BE/FILLED_IN
 License:    TO BE FILLED IN
@@ -30,7 +30,7 @@ cd %{buildroot}/usr/etc/fonts/conf.d/
 ln -s ../../../../opt/etc/fonts/conf.avail/$FONT_CONF_FILE %{buildroot}/usr/etc/fonts/conf.d/$FONT_CONF_FILE
 
 %post
-chown :5000 /usr/opt/etc/fonts/conf.avail/99-slp.conf
+chown 5000:5000 /usr/opt/etc/fonts/conf.avail/99-slp.conf
 chmod 664 /usr/opt/etc/fonts/conf.avail/99-slp.conf
 /etc/opt/init/default-fonts-fc-sdk.init.sh
 chsmack -a '*' /opt/etc/fonts/conf.avail/99-slp.conf
