@@ -7,6 +7,7 @@ Group:      TO_BE/FILLED_IN
 License:    TO BE FILLED IN
 Source0:    %{name}-%{version}.tar.gz
 Source1001: packaging/default-fonts-fc-sdk.manifest
+Requires:    smack-utils
 
 %description
 Font configuration package for SDK
