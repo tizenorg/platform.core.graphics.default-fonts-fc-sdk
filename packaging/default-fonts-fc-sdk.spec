@@ -30,7 +30,7 @@ cd %{buildroot}/usr/etc/fonts/conf.d/
 ln -s ../../../../opt/etc/fonts/conf.avail/$FONT_CONF_FILE %{buildroot}/usr/etc/fonts/conf.d/$FONT_CONF_FILE
 
 %post
-chown 5000:5000 /usr/opt/etc/fonts/conf.avail/99-slp.conf
+chown root:app /usr/opt/etc/fonts/conf.avail/99-slp.conf
 chmod 664 /usr/opt/etc/fonts/conf.avail/99-slp.conf
 /etc/opt/init/default-fonts-fc-sdk.init.sh
 chsmack -a '*' /opt/etc/fonts/conf.avail/99-slp.conf
