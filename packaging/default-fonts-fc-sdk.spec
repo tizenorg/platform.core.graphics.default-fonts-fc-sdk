@@ -20,7 +20,8 @@ This package is maintained by SDK team
 cp %{SOURCE1001} .
 
 %install
-export FONT_CONF_FILE="99-slp.conf"
+export FONT_CONF_FILE_1="99-slp.conf"
+export FONT_CONF_FILE_2="10-hinting-slight.conf"
 
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/opt/etc/fonts/conf.avail/
@@ -28,19 +29,20 @@ mkdir -p %{buildroot}/etc/opt/init/ && cp -a default-fonts-fc-sdk.init.sh %{buil
 mkdir -p %{buildroot}/usr/etc/fonts/conf.d/
 mkdir -p %{buildroot}/usr/opt/etc/fonts/conf.avail/ && cp -a sdk_fonts_fc/* %{buildroot}/usr/opt/etc/fonts/conf.avail/
 cd %{buildroot}/usr/etc/fonts/conf.d/
-ln -s ../../../../opt/etc/fonts/conf.avail/$FONT_CONF_FILE %{buildroot}/usr/etc/fonts/conf.d/$FONT_CONF_FILE
+ln -s ../../../../opt/etc/fonts/conf.avail/$FONT_CONF_FILE_1 %{buildroot}/usr/etc/fonts/conf.d/$FONT_CONF_FILE_1
+ln -s ../../../../opt/etc/fonts/conf.avail/$FONT_CONF_FILE_2 %{buildroot}/usr/etc/fonts/conf.d/$FONT_CONF_FILE_2
 
 %post
-chown root:app /usr/opt/etc/fonts/conf.avail/99-slp.conf
-chmod 664 /usr/opt/etc/fonts/conf.avail/99-slp.conf
+chown root:app /usr/opt/etc/fonts/conf.avail/*.conf
+chmod 664 /usr/opt/etc/fonts/conf.avail/*.conf
 /etc/opt/init/default-fonts-fc-sdk.init.sh
-chsmack -a '*' /opt/etc/fonts/conf.avail/99-slp.conf
+chsmack -a '*' /opt/etc/fonts/conf.avail/*.conf
 
 %files
 %manifest default-fonts-fc-sdk.manifest
 %defattr(-,root,root,-)
-/usr/opt/etc/fonts/conf.avail/99-slp.conf
-/usr/etc/fonts/conf.d/99-slp.conf
+/usr/opt/etc/fonts/conf.avail/*.conf
+/usr/etc/fonts/conf.d/*.conf
 /etc/opt/init/default-fonts-fc-sdk.init.sh
 /opt/etc/fonts/conf.avail/
 %exclude /usr/etc/fonts/conf.d/documentation.list
