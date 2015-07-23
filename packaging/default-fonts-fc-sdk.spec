@@ -1,7 +1,7 @@
 #sbs-git:slp/sdk/default-fonts-fc-sdk default-fonts-fc-sdk 0.0.2 8414dbd3e62b6f7a864ba031e043dd7604b3d86d
 Name:       default-fonts-fc-sdk
 Summary:    Font configuration package for SDK
-Version:    0.0.4
+Version:    0.0.5
 Release:    1
 Group:      TO_BE/FILLED_IN
 License:    Apache License, Version 2.0
