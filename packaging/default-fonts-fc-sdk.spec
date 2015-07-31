@@ -4,7 +4,7 @@ Summary:    Font configuration package for SDK
 Version:    0.0.5
 Release:    1
 Group:      TO_BE/FILLED_IN
-License:    Apache License, Version 2.0
+License:    Apache-2.0
 Source0:    %{name}-%{version}.tar.gz
 Source1001: packaging/default-fonts-fc-sdk.manifest
 Requires:    smack-utils
