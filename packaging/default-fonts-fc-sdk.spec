@@ -7,7 +7,6 @@ Group:      TO_BE/FILLED_IN
 License:    Apache-2.0
 Source0:    %{name}-%{version}.tar.gz
 Source1001: packaging/default-fonts-fc-sdk.manifest
-Requires:    smack-utils
 
 %description
 Font configuration package for SDK
