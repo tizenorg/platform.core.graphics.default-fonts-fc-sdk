@@ -7,6 +7,7 @@ Group:      TO_BE/FILLED_IN
 License:    Apache-2.0
 Source0:    %{name}-%{version}.tar.gz
 Source1001: packaging/default-fonts-fc-sdk.manifest
+BuildRequires:  pkgconfig(libtzplatform-config)
 
 %description
 Font configuration package for SDK
@@ -22,26 +23,26 @@ cp %{SOURCE1001} .
 export FONT_CONF_FILE_1="99-slp.conf"
 export FONT_CONF_FILE_2="10-hinting-slight.conf"
 
+## TZ_SYS_RO_ETC: /etc, TZ_SYS_ETC: /opt/etc/
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/opt/etc/fonts/conf.avail/
-mkdir -p %{buildroot}/etc/opt/init/ && cp -a default-fonts-fc-sdk.init.sh %{buildroot}/etc/opt/init/
-mkdir -p %{buildroot}/usr/etc/fonts/conf.d/
-mkdir -p %{buildroot}/usr/opt/etc/fonts/conf.avail/ && cp -a sdk_fonts_fc/* %{buildroot}/usr/opt/etc/fonts/conf.avail/
-cd %{buildroot}/usr/etc/fonts/conf.d/
-ln -s ../../../../opt/etc/fonts/conf.avail/$FONT_CONF_FILE_1 %{buildroot}/usr/etc/fonts/conf.d/$FONT_CONF_FILE_1
-ln -s ../../../../opt/etc/fonts/conf.avail/$FONT_CONF_FILE_2 %{buildroot}/usr/etc/fonts/conf.d/$FONT_CONF_FILE_2
+mkdir -p %{buildroot}%{TZ_SYS_RO_ETC}/fonts/conf.avail/
+mkdir -p %{buildroot}%{TZ_SYS_RO_ETC}/opt/init/ && cp -a default-fonts-fc-sdk.init.sh %{buildroot}%{TZ_SYS_RO_ETC}/opt/init/
+mkdir -p %{buildroot}%{TZ_SYS_RO_ETC}/fonts/conf.d/
+mkdir -p %{buildroot}%{TZ_SYS_ETC}/fonts/conf.avail/ && cp -a sdk_fonts_fc/* %{buildroot}%{TZ_SYS_ETC}/fonts/conf.avail/
+ln -s %{TZ_SYS_ETC}/fonts/conf.avail/$FONT_CONF_FILE_1 %{buildroot}%{TZ_SYS_RO_ETC}/fonts/conf.d/$FONT_CONF_FILE_1
+ln -s %{TZ_SYS_ETC}/fonts/conf.avail/$FONT_CONF_FILE_2 %{buildroot}%{TZ_SYS_RO_ETC}/fonts/conf.d/$FONT_CONF_FILE_2
 
 %post
-chown root:app /usr/opt/etc/fonts/conf.avail/*.conf
-chmod 664 /usr/opt/etc/fonts/conf.avail/*.conf
-/etc/opt/init/default-fonts-fc-sdk.init.sh
-chsmack -a '*' /opt/etc/fonts/conf.avail/*.conf
+chown root:users %{TZ_SYS_ETC}/fonts/conf.avail/*.conf
+chmod 664 %{TZ_SYS_ETC}/fonts/conf.avail/*.conf
+%{TZ_SYS_RO_ETC}/opt/init/default-fonts-fc-sdk.init.sh
+chsmack -a '*' %{TZ_SYS_ETC}/fonts/conf.avail/*.conf
 
 %files
 %manifest default-fonts-fc-sdk.manifest
 %defattr(-,root,root,-)
-/usr/opt/etc/fonts/conf.avail/*.conf
-/usr/etc/fonts/conf.d/*.conf
-/etc/opt/init/default-fonts-fc-sdk.init.sh
-/opt/etc/fonts/conf.avail/
-%exclude /usr/etc/fonts/conf.d/documentation.list
+%{TZ_SYS_ETC}/fonts/conf.avail/*.conf
+%{TZ_SYS_RO_ETC}/fonts/conf.d/*.conf
+%{TZ_SYS_RO_ETC}/opt/init/default-fonts-fc-sdk.init.sh
+%{TZ_SYS_RO_ETC}/fonts/conf.avail/
+%exclude %{TZ_SYS_RO_ETC}/fonts/conf.d/documentation.list
