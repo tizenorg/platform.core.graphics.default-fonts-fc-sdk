@@ -20,7 +20,7 @@ This package is maintained by SDK team
 cp %{SOURCE1001} .
 
 %install
-export FONT_CONF_FILE_1="99-slp.conf"
+export FONT_CONF_FILE_1="99-tizen.conf"
 export FONT_CONF_FILE_2="10-hinting-slight.conf"
 
 ## TZ_SYS_RO_ETC: /etc, TZ_SYS_ETC: /opt/etc/
