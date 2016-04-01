@@ -25,8 +25,6 @@ export FONT_CONF_FILE_2="10-hinting-slight.conf"
 
 ## TZ_SYS_RO_ETC: /etc, TZ_SYS_ETC: /opt/etc/
 rm -rf %{buildroot}
-mkdir -p %{buildroot}%{TZ_SYS_RO_ETC}/fonts/conf.avail/
-mkdir -p %{buildroot}%{TZ_SYS_RO_ETC}/opt/init/ && cp -a default-fonts-fc-sdk.init.sh %{buildroot}%{TZ_SYS_RO_ETC}/opt/init/
 mkdir -p %{buildroot}%{TZ_SYS_RO_ETC}/fonts/conf.d/
 mkdir -p %{buildroot}%{TZ_SYS_ETC}/fonts/conf.avail/ && cp -a sdk_fonts_fc/* %{buildroot}%{TZ_SYS_ETC}/fonts/conf.avail/
 ln -s %{TZ_SYS_ETC}/fonts/conf.avail/$FONT_CONF_FILE_1 %{buildroot}%{TZ_SYS_RO_ETC}/fonts/conf.d/$FONT_CONF_FILE_1
@@ -35,7 +33,6 @@ ln -s %{TZ_SYS_ETC}/fonts/conf.avail/$FONT_CONF_FILE_2 %{buildroot}%{TZ_SYS_RO_E
 %post
 chown root:users %{TZ_SYS_ETC}/fonts/conf.avail/*.conf
 chmod 664 %{TZ_SYS_ETC}/fonts/conf.avail/*.conf
-%{TZ_SYS_RO_ETC}/opt/init/default-fonts-fc-sdk.init.sh
 chsmack -a '*' %{TZ_SYS_ETC}/fonts/conf.avail/*.conf
 
 %files
@@ -43,6 +40,4 @@ chsmack -a '*' %{TZ_SYS_ETC}/fonts/conf.avail/*.conf
 %defattr(-,root,root,-)
 %{TZ_SYS_ETC}/fonts/conf.avail/*.conf
 %{TZ_SYS_RO_ETC}/fonts/conf.d/*.conf
-%{TZ_SYS_RO_ETC}/opt/init/default-fonts-fc-sdk.init.sh
-%{TZ_SYS_RO_ETC}/fonts/conf.avail/
 %exclude %{TZ_SYS_RO_ETC}/fonts/conf.d/documentation.list
